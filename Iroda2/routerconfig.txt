@@ -1,0 +1,22 @@
+router 2 ioda
+
+en
+conf t
+hostname R3_iroda
+
+int s0/0/1
+ip add 10.10.40.2 255.255.255.248
+no sh
+exit
+router ospf 1
+network 10.10.40.0 0.0.0.7 area 0
+line con 0
+password vizsgaremek$
+login
+exit
+line vty 0 15
+password vizsgaremek$
+login
+exit
+enable secret $vizsgaremek
+do wr

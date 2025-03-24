@@ -1,0 +1,26 @@
+router 1 telephely:
+
+en
+conf t
+hostname R1_Telephely
+
+int s0/0/0
+ip add 10.10.41.1 255.255.255.248
+no sh
+exit
+int s0/0/1
+ip add 10.10.40.1 255.255.255.248
+no sh
+exit
+router ospf 1
+network 10.10.40.0 0.0.0.7 area 0
+network 10.10.41.0 0.0.0.7 area 0
+line con 0
+password vizsgaremek$
+login
+exit
+line vty 0 15
+password vizsgaremek$
+login
+exit
+enable secret $vizsgaremek
