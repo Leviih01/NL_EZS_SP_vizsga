@@ -1,0 +1,20 @@
+en
+conf
+vlan 10
+exit
+vlan 20
+exit
+vlan 30
+exit
+vlan 40
+exit
+int range f0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 20,30,40
+channel-group 1 mode passive 
+int range f0/3-4
+switchport mode trunk
+switchport trunk allowed vlan 20,30,40
+channel-group 2 mode passive 
+exit
+do wr
