@@ -1,0 +1,11 @@
+Win Server Settings:
+ip: 10.10.20.2
+mask: 255.255.255.128
+
+user: 
+Administrator
+K01WM_mnAD8hN$
+
+AD Backup PW:
+
+
